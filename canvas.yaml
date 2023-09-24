@@ -1,0 +1,27 @@
+preset: package
+
+namespace: MyListerHub\TemplateWizard
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: MyListerHub\TemplateWizard\Console
+
+model:
+  namespace: MyListerHub\TemplateWizard\Models
+
+provider:
+  namespace: MyListerHub\TemplateWizard
+
+testing:
+  namespace: MyListerHub\TemplateWizard\Tests

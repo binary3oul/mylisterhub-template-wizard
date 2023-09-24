@@ -1,0 +1,80 @@
+{
+    "name": "mylisterhub/template-wizard",
+    "description": "This wizard will enable users to select a design template and customize it with predefined colors, all within a modal window.",
+    "keywords": [
+        "MyListerHub",
+        "laravel",
+        "template-wizard"
+    ],
+    "homepage": "https://github.com/mylisterhub/template-wizard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "binary3oul",
+            "email": "soalrteacostaw@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/FmTod/mylisterhub-core-package"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "mylisterhub/core": "^1.0",
+        "spatie/laravel-package-tools": "^1.14.0",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/canvas": "^8.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyListerHub\\TemplateWizard\\": "src/",
+            "MyListerHub\\TemplateWizard\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MyListerHub\\TemplateWizard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MyListerHub\\TemplateWizard\\TemplateWizardServiceProvider"
+            ],
+            "aliases": {
+                "TemplateWizard": "MyListerHub\\TemplateWizard\\Facades\\TemplateWizard"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
